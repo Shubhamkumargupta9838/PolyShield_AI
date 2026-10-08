@@ -1,0 +1,88 @@
+{
+  "dataset_version": "dynamic-v1.0",
+  "dataset_provenance_status": "SYNTHETIC_FIXTURE",
+  "scientific_benchmark_ready": false,
+  "evaluation_status": "ENGINEERING_SMOKE_EVALUATION",
+  "ablation_status": "ENGINEERING_ONLY",
+  "threshold": 0.5,
+  "weights": {
+    "static_weight": 0.5,
+    "dynamic_weight": 0.5
+  },
+  "sample_count": 6,
+  "models": {
+    "static_only": {
+      "evaluation_status": "ENGINEERING_SMOKE_EVALUATION",
+      "sample_count": 6,
+      "threshold": 0.5,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0,
+      "confusion_matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "latency": null
+    },
+    "dynamic_only": {
+      "evaluation_status": "ENGINEERING_SMOKE_EVALUATION",
+      "sample_count": 6,
+      "threshold": 0.5,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0,
+      "confusion_matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "latency": null
+    },
+    "ensemble": {
+      "evaluation_status": "ENGINEERING_SMOKE_EVALUATION",
+      "sample_count": 6,
+      "threshold": 0.5,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0,
+      "confusion_matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "latency": null
+    }
+  },
+  "scientific_claim_policy": "The multimodal ensemble has been implemented and engineering-validated. Comparative scientific performance remains unestablished because the current dataset consists of synthetic engineering fixtures and is not benchmark-ready."
+}

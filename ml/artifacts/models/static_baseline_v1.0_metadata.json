@@ -1,0 +1,42 @@
+{
+  "model_name": "static_baseline_v1.0",
+  "model_type": "random_forest",
+  "model_version": "static-baseline-v1",
+  "dataset_version": "v1.0",
+  "feature_schema_version": "static-v1",
+  "feature_names": [
+    "file_size",
+    "number_of_sections",
+    "dll_count",
+    "api_count",
+    "max_section_entropy",
+    "min_section_entropy",
+    "mean_section_entropy",
+    "high_entropy_section_count",
+    "executable_section_count",
+    "writable_section_count",
+    "rwx_section_count",
+    "unusual_section_count",
+    "resource_count",
+    "suspicious_api_count",
+    "static_indicator_count",
+    "is_dll",
+    "is_driver"
+  ],
+  "random_state": 42,
+  "hyperparameters": {
+    "n_estimators": 300,
+    "random_state": 42,
+    "class_weight": "balanced",
+    "max_depth": null,
+    "n_jobs": 1
+  },
+  "classification_threshold": 0.5,
+  "training_sample_count": 8,
+  "validation_sample_count": 1,
+  "test_sample_count": 1,
+  "dataset_type": "synthetic_fixture",
+  "scientific_benchmark_available": false,
+  "evaluation_status": "INSUFFICIENT_CLASS_COVERAGE",
+  "training_timestamp": "2026-09-14T14:48:46.354351+00:00"
+}

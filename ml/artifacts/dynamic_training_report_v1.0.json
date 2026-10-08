@@ -1,0 +1,77 @@
+{
+  "model_version": "dynamic_lstm_v1.0",
+  "dataset_version": "dynamic-v1.0",
+  "dataset_provenance_status": "SYNTHETIC_FIXTURE",
+  "scientific_benchmark_ready": false,
+  "training_status": "COMPLETED",
+  "evaluation_status": "NOT_SCIENTIFICALLY_EVALUABLE",
+  "hyperparameters": {
+    "max_sequence_length": 256,
+    "batch_size": 4,
+    "epochs": 5,
+    "learning_rate": 0.001,
+    "patience": 5,
+    "seed": 42
+  },
+  "class_weights": {
+    "0": 1.0,
+    "1": 1.0
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.7052,
+      "val_loss": 0.6764
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.686,
+      "val_loss": 0.6656
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.6667,
+      "val_loss": 0.652
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6496,
+      "val_loss": 0.6394
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6325,
+      "val_loss": 0.6259
+    }
+  ],
+  "best_epoch": 5,
+  "threshold": 0.5,
+  "threshold_selection_status": "NOT_SCIENTIFICALLY_EVALUABLE",
+  "metrics": {
+    "evaluation_status": "NOT_SCIENTIFICALLY_EVALUABLE",
+    "sample_count": 1,
+    "threshold": 0.5,
+    "accuracy": 1.0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "roc_auc": null,
+    "pr_auc": null,
+    "fpr": null,
+    "fnr": null,
+    "confusion_matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "latency": null
+  },
+  "limitations": [
+    "Dataset contains synthetic PE fixtures; metrics represent engineering smoke validation rather than real-world malware detection performance."
+  ]
+}

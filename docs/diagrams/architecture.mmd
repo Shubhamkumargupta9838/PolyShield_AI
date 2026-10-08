@@ -1,0 +1,21 @@
+graph TD
+    User["User / Security Analyst"] -->|HTTP / React UI| Proxy["Nginx Reverse Proxy"]
+    Proxy -->|API Proxy| API["FastAPI Backend Server"]
+    API -->|Auth / Session| Auth["JWT & RBAC Security Layer"]
+    API -->|Write / Query Scans| Mongo[("MongoDB 6.0 (Authoritative State)")]
+    API -->|Enqueue Scan Task| Redis[("Redis 7.0 (Celery Broker / Cache)")]
+    Redis -->|Dequeue Work| Worker["Celery Worker Service"]
+    Worker -->|Fetch Metadata| Mongo
+    Worker -->|Execute Static Analysis| StaticEngine["Static PE Analyzer"]
+    Worker -->|Dynamic Telemetry Request| SandboxCtrl["Sandbox Controller"]
+    SandboxCtrl -->|Mock/VM Boundary| Provider["Sandbox Provider Boundary"]
+    Provider -.->|Provider Unavailable in Dev| Fallback["Safe Unavailable Provider Path"]
+    StaticEngine -->|17 Features| MLStatic["RandomForest / XGBoost Model"]
+    Worker -->|Behavioral Telemetry| DynamicNorm["Telemetry Normalizer"]
+    DynamicNorm -->|14 Features + Sequence| MLDynamic["PyTorch LSTM Model"]
+    MLStatic -->|P_static| Ensemble["Ensemble Fusion (0.5 Ps + 0.5 Pd)"]
+    MLDynamic -->|P_dynamic| Ensemble
+    Ensemble -->|Final Probability| Risk["Risk Band Assessor"]
+    Ensemble -->|Attribution Data| XAI["SHAP & Captum Explainability"]
+    Risk -->|Save Report| Mongo
+    XAI -->|Save Explanations| Mongo

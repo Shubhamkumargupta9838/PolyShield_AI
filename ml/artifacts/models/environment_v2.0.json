@@ -1,0 +1,12 @@
+{
+  "python_version": "3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "scikit_learn_version": "1.9.1",
+  "xgboost_version": "3.4.1",
+  "numpy_version": "2.5.3",
+  "pandas_version": "3.0.5",
+  "random_state": 42,
+  "dataset_version": "v2.0",
+  "feature_schema_version": "static-v1",
+  "model_version": "static-baseline-v1"
+}

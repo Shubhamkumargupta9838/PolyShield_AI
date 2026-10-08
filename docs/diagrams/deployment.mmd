@@ -1,0 +1,15 @@
+graph LR
+    subgraph FrontendEdge ["frontend-edge Network"]
+        Client["Client Web Browser"] -->|Port 80/443| Nginx["Nginx Reverse Proxy Container"]
+    end
+
+    subgraph InternalBackend ["internal-backend Network"]
+        Nginx -->|Port 8000 (Internal)| Backend["FastAPI Backend Container (4 Workers)"]
+    end
+
+    subgraph InternalDB ["internal-db Network (Internal: True)"]
+        Backend -->|Port 27017| Mongo[("MongoDB Container")]
+        Backend -->|Port 6379| Redis[("Redis Container")]
+        Worker["Celery Worker Container"] --> Mongo
+        Worker --> Redis
+    end

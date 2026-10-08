@@ -1,0 +1,268 @@
+{
+  "dataset_version": "v2.0",
+  "feature_schema_version": "static-v1",
+  "dataset_type": "synthetic_fixture",
+  "dataset_provenance_status": "SYNTHETIC_FIXTURE",
+  "verified_real_sample_count": 0,
+  "synthetic_sample_count": 20,
+  "safe_fixture_sample_count": 20,
+  "unverified_sample_count": 0,
+  "structurally_valid": true,
+  "scientifically_benchmark_ready": false,
+  "statistically_powerful": false,
+  "scientific_benchmark_available": false,
+  "evaluation_status": "VALID",
+  "dataset_fingerprint": "d35acf52c5d4b8deaa6ebc7c529053e1ba551312e5339439b13b6d5022b2bfba",
+  "total_manifest_records": 20,
+  "total_unique_samples": 20,
+  "successful_analyses": 20,
+  "failed_analyses": 0,
+  "benign_count": 10,
+  "malware_count": 10,
+  "class_ratio": 1.0,
+  "duplicate_record_count": 0,
+  "duplicate_hash_group_count": 0,
+  "missing_value_count": 0,
+  "quality_audit": {
+    "dataset_type": "synthetic_fixture",
+    "dataset_provenance_status": "SYNTHETIC_FIXTURE",
+    "verified_real_sample_count": 0,
+    "synthetic_sample_count": 20,
+    "safe_fixture_sample_count": 20,
+    "unverified_sample_count": 0,
+    "structurally_valid": true,
+    "scientifically_benchmark_ready": false,
+    "statistically_powerful": false,
+    "scientific_benchmark_available": false,
+    "evaluation_status": "VALID",
+    "splits": {
+      "train": {
+        "split_name": "train",
+        "sample_count": 14,
+        "benign_count": 6,
+        "malware_count": 8,
+        "class_ratio": 1.3333,
+        "contains_benign": true,
+        "contains_malware": true,
+        "has_both_classes": true,
+        "unique_sha256_count": 14,
+        "duplicate_sha256_count": 0,
+        "unique_groups": [
+          "group_benign_a",
+          "group_benign_b",
+          "group_benign_c",
+          "group_emotet",
+          "group_ransomware",
+          "group_rat",
+          "group_stealer",
+          "group_trickbot"
+        ],
+        "unique_families": [
+          "synthetic_agent_tesla_pattern",
+          "synthetic_benign",
+          "synthetic_emotet_pattern",
+          "synthetic_formbook_pattern",
+          "synthetic_lokibot_pattern",
+          "synthetic_ransomware_pattern",
+          "synthetic_remcos_pattern",
+          "synthetic_trickbot_pattern",
+          "synthetic_wannacry_pattern"
+        ]
+      },
+      "validation": {
+        "split_name": "validation",
+        "sample_count": 3,
+        "benign_count": 2,
+        "malware_count": 1,
+        "class_ratio": 0.5,
+        "contains_benign": true,
+        "contains_malware": true,
+        "has_both_classes": true,
+        "unique_sha256_count": 3,
+        "duplicate_sha256_count": 0,
+        "unique_groups": [
+          "group_benign_e",
+          "group_mal_b"
+        ],
+        "unique_families": [
+          "synthetic_benign",
+          "synthetic_malware_beta"
+        ]
+      },
+      "test": {
+        "split_name": "test",
+        "sample_count": 3,
+        "benign_count": 2,
+        "malware_count": 1,
+        "class_ratio": 0.5,
+        "contains_benign": true,
+        "contains_malware": true,
+        "has_both_classes": true,
+        "unique_sha256_count": 3,
+        "duplicate_sha256_count": 0,
+        "unique_groups": [
+          "group_benign_d",
+          "group_mal_a"
+        ],
+        "unique_families": [
+          "synthetic_benign",
+          "synthetic_malware_alpha"
+        ]
+      }
+    },
+    "warnings": [
+      "Dataset is classified as SYNTHETIC_FIXTURE. Results verify software pipeline engineering, NOT real-world scientific detection performance.",
+      "Dataset is NOT scientifically benchmark ready (total samples: 20, provenance: SYNTHETIC_FIXTURE). Minimum 100 verified real external samples required.",
+      "Dataset is NOT statistically powerful. High-confidence generalization claims require 1,000+ real-world PE binaries."
+    ]
+  },
+  "split_information": {
+    "strategy": "group_aware",
+    "random_state": 42,
+    "train_count": 14,
+    "val_count": 3,
+    "test_count": 3,
+    "actual_train_ratio": 0.7,
+    "actual_val_ratio": 0.15,
+    "actual_test_ratio": 0.15,
+    "group_key_used": "group_id"
+  },
+  "feature_statistics": {
+    "file_size": {
+      "dtype": "float64",
+      "min": 1040.0,
+      "max": 1040.0,
+      "mean": 1040.0,
+      "median": 1040.0,
+      "std": 0.0
+    },
+    "number_of_sections": {
+      "dtype": "float64",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0
+    },
+    "dll_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "api_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "max_section_entropy": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "min_section_entropy": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "mean_section_entropy": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "high_entropy_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "executable_section_count": {
+      "dtype": "float64",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0
+    },
+    "writable_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "rwx_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "unusual_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "resource_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "suspicious_api_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "static_indicator_count": {
+      "dtype": "float64",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0
+    },
+    "is_dll": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "is_driver": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    }
+  }
+}

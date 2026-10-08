@@ -1,0 +1,63 @@
+{
+  "model_name": "random_forest_static_v2.0",
+  "model_type": "random_forest",
+  "model_version": "static-baseline-v1",
+  "dataset_version": "v2.0",
+  "feature_schema_version": "static-v1",
+  "feature_names": [
+    "file_size",
+    "number_of_sections",
+    "dll_count",
+    "api_count",
+    "max_section_entropy",
+    "min_section_entropy",
+    "mean_section_entropy",
+    "high_entropy_section_count",
+    "executable_section_count",
+    "writable_section_count",
+    "rwx_section_count",
+    "unusual_section_count",
+    "resource_count",
+    "suspicious_api_count",
+    "static_indicator_count",
+    "is_dll",
+    "is_driver"
+  ],
+  "feature_count": 17,
+  "random_seed": 42,
+  "hyperparameters": {
+    "n_estimators": 300,
+    "random_state": 42,
+    "class_weight": "balanced",
+    "max_depth": null,
+    "n_jobs": 1
+  },
+  "classification_threshold": 0.5,
+  "training_sample_count": 14,
+  "validation_sample_count": 3,
+  "test_sample_count": 3,
+  "training_class_distribution": {
+    "benign": 6,
+    "malware": 8
+  },
+  "validation_class_distribution": {
+    "benign": 2,
+    "malware": 1
+  },
+  "test_class_distribution": {
+    "benign": 2,
+    "malware": 1
+  },
+  "dataset_type": "synthetic_fixture",
+  "dataset_provenance_status": "SYNTHETIC_FIXTURE",
+  "dataset_fingerprint": "d35acf52c5d4b8deaa6ebc7c529053e1ba551312e5339439b13b6d5022b2bfba",
+  "structurally_valid": true,
+  "scientifically_benchmark_ready": false,
+  "statistically_powerful": false,
+  "scientific_benchmark_available": false,
+  "scientific_benchmark": false,
+  "statistical_benchmark": false,
+  "evaluation_status": "VALID",
+  "synthetic_dataset_warning": "WARNING: This evaluation uses 20 synthetic/safe PE engineering fixtures. The results validate the ML pipeline and implementation only. They must NOT be interpreted as real-world malware detection performance.",
+  "training_timestamp": "2026-09-14T16:35:12.601775+00:00"
+}

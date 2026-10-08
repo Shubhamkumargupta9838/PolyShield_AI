@@ -1,0 +1,26 @@
+graph TD
+    PE["Uploaded PE File"] --> StaticAnalyzer["Static PE Analyzer"]
+    PE --> DynamicSandbox["Sandbox Telemetry Normalizer"]
+
+    subgraph StaticModality ["Static Modality"]
+        StaticAnalyzer -->|Parse PE Structure| SFeatures["17 Canonical Static Features (static-v1)"]
+        SFeatures --> RF["Random Forest / XGBoost Baseline"]
+        RF --> Pstatic["Static Malware Probability (P_static)"]
+    end
+
+    subgraph DynamicModality ["Dynamic Modality"]
+        DynamicSandbox -->|Event Vocabulary Mapping| Seq["Behavioral Sequence (len <= 256)"]
+        Seq --> LSTM["PyTorch Dynamic LSTM Model"]
+        LSTM --> Pdynamic["Dynamic Malware Probability (P_dynamic)"]
+    end
+
+    Pstatic --> Fusion["Equal-Weight Fusion: P_ensemble = 0.5*P_static + 0.5*P_dynamic"]
+    Pdynamic --> Fusion
+    Fusion --> RiskBand["Risk Assessment (LOW, MEDIUM, HIGH, CRITICAL)"]
+
+    subgraph Explainability ["Explainable AI"]
+        SFeatures --> SHAP["SHAP Explainer (TreeExplainer)"]
+        Seq --> Captum["Captum LayerIntegratedGradients"]
+        SHAP --> TopFeatures["Top Static Risk Indicators"]
+        Captum --> SeqAttribution["Behavioral Event Attribution"]
+    end

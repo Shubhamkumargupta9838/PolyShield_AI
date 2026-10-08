@@ -1,0 +1,10 @@
+node_modules
+frontend/node_modules
+dist
+frontend/dist
+.git
+*.log
+.env
+.venv
+data/storage
+data/logs

@@ -1,0 +1,164 @@
+{
+  "dataset_version": "v1.0",
+  "feature_schema_version": "static-v1",
+  "dataset_fingerprint": "ee9f028e7c23f7d740556dab97cfd86426edd31080c5664993d1563489fb75d0",
+  "total_manifest_records": 10,
+  "total_unique_samples": 10,
+  "successful_analyses": 10,
+  "failed_analyses": 0,
+  "benign_count": 5,
+  "malware_count": 5,
+  "class_ratio": 1.0,
+  "duplicate_record_count": 4,
+  "duplicate_hash_group_count": 2,
+  "missing_value_count": 0,
+  "split_information": {
+    "strategy": "stratified_hash_deduplicated",
+    "random_state": 42,
+    "train_count": 8,
+    "val_count": 1,
+    "test_count": 1,
+    "actual_train_ratio": 0.8,
+    "actual_val_ratio": 0.1,
+    "actual_test_ratio": 0.1,
+    "group_key_used": "sha256"
+  },
+  "feature_statistics": {
+    "file_size": {
+      "dtype": "float64",
+      "min": 1040.0,
+      "max": 1040.0,
+      "mean": 1040.0,
+      "median": 1040.0,
+      "std": 0.0
+    },
+    "number_of_sections": {
+      "dtype": "float64",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0
+    },
+    "dll_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "api_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "max_section_entropy": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "min_section_entropy": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "mean_section_entropy": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "high_entropy_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "executable_section_count": {
+      "dtype": "float64",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0
+    },
+    "writable_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "rwx_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "unusual_section_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "resource_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "suspicious_api_count": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "static_indicator_count": {
+      "dtype": "float64",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0
+    },
+    "is_dll": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    },
+    "is_driver": {
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0
+    }
+  }
+}

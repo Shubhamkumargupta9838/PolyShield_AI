@@ -1,0 +1,30 @@
+graph TB
+    subgraph TrustedDomain ["TRUSTED HOST DOMAIN"]
+        UI["React Frontend Application"]
+        API["FastAPI App (Non-Root UID 10001)"]
+        DB[("MongoDB 6.0 Data Store")]
+        Cache[("Redis 7.0 Broker")]
+        Worker["Celery Worker (Non-Root)"]
+        ML["ML Model Service (Read-Only Artifacts)"]
+    end
+
+    subgraph SecurityControls ["TRUST BOUNDARY & CONTROLS"]
+        Auth["JWT Token Validation"]
+        RBAC["Role-Based Access Control"]
+        PathVal["Safe-Root Path Validation"]
+        SizeVal["Max File Size Limit (50MB)"]
+        CheckVal["SHA-256 Checksum Verification"]
+        NoSubproc["Zero Subprocess Execution Policy"]
+    end
+
+    subgraph UntrustedDomain ["UNTRUSTED DOMAIN (ISOLATED)"]
+        Sample["Uploaded PE Sample Bytes"]
+        SandboxBoundary["Sandbox Guest Provider Interface"]
+        Telemetry["Raw Telemetry Logs"]
+    end
+
+    Sample -->|Strict Byte Buffer| SizeVal
+    SizeVal --> CheckVal
+    CheckVal --> PathVal
+    PathVal --> DB
+    SandboxBoundary -.->|Zero Host Detonation| NoSubproc

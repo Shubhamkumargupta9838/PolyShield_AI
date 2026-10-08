@@ -1,0 +1,11 @@
+filename,label,family,group_id,source
+benign_sample_001.exe,0,,,synthetic
+benign_sample_002.exe,0,,,synthetic
+benign_sample_003.exe,0,,,synthetic
+benign_sample_004.exe,0,,,synthetic
+benign_sample_005.exe,0,,,synthetic
+malware_sample_001.exe,1,family_alpha,group_a,dataset_x
+malware_sample_002.exe,1,family_beta,group_b,dataset_x
+malware_sample_003.exe,1,family_gamma,group_c,dataset_x
+malware_sample_004.exe,1,family_delta,group_d,dataset_x
+malware_sample_005.exe,1,family_epsilon,group_e,dataset_x

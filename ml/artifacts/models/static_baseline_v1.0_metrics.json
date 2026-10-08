@@ -1,0 +1,183 @@
+{
+  "dataset_quality": {
+    "dataset_type": "synthetic_fixture",
+    "scientific_benchmark_available": false,
+    "evaluation_status": "INSUFFICIENT_CLASS_COVERAGE",
+    "splits": {
+      "train": {
+        "split_name": "train",
+        "sample_count": 8,
+        "benign_count": 3,
+        "malware_count": 5,
+        "class_ratio": 1.6667,
+        "contains_benign": true,
+        "contains_malware": true,
+        "has_both_classes": true,
+        "unique_sha256_count": 6,
+        "duplicate_sha256_count": 2,
+        "unique_groups": [
+          "group_a",
+          "group_b",
+          "group_c",
+          "group_d",
+          "group_e"
+        ],
+        "unique_families": [
+          "family_alpha",
+          "family_beta",
+          "family_delta",
+          "family_epsilon",
+          "family_gamma"
+        ]
+      },
+      "validation": {
+        "split_name": "validation",
+        "sample_count": 1,
+        "benign_count": 1,
+        "malware_count": 0,
+        "class_ratio": 0.0,
+        "contains_benign": true,
+        "contains_malware": false,
+        "has_both_classes": false,
+        "unique_sha256_count": 1,
+        "duplicate_sha256_count": 0,
+        "unique_groups": [],
+        "unique_families": []
+      },
+      "test": {
+        "split_name": "test",
+        "sample_count": 1,
+        "benign_count": 1,
+        "malware_count": 0,
+        "class_ratio": 0.0,
+        "contains_benign": true,
+        "contains_malware": false,
+        "has_both_classes": false,
+        "unique_sha256_count": 1,
+        "duplicate_sha256_count": 0,
+        "unique_groups": [],
+        "unique_families": []
+      }
+    },
+    "warnings": [
+      "Validation split does not contain both benign and malware samples.",
+      "Test split does not contain both benign and malware samples.",
+      "Dataset is classified as synthetic_fixture. Results verify pipeline engineering, not scientific detection performance."
+    ]
+  },
+  "model_selection": {
+    "winner_model": "random_forest",
+    "selection_metric": "f1_score",
+    "model_selection_status": "NOT_SCIENTIFICALLY_EVALUABLE",
+    "locked_threshold": 0.5
+  },
+  "validation_comparison": {
+    "random_forest": {
+      "evaluation_status": "INSUFFICIENT_CLASS_COVERAGE",
+      "has_both_classes": false,
+      "threshold": 0.5,
+      "accuracy": 1.0,
+      "precision": null,
+      "recall": null,
+      "f1_score": null,
+      "roc_auc": null,
+      "pr_auc": null,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": null,
+      "confusion_matrix": {
+        "true_negatives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 0
+      },
+      "roc_curve": {
+        "false_positive_rate": [],
+        "true_positive_rate": [],
+        "thresholds": []
+      },
+      "pr_curve": {
+        "precision": [],
+        "recall": [],
+        "thresholds": []
+      },
+      "warnings": [
+        "Accuracy is calculated, but evaluation split does not contain both benign and malware classes. Accuracy must NOT be interpreted as malware detection performance.",
+        "Evaluation split contains no malware (positive) samples. Recall, Precision, F1, FNR, ROC-AUC, and PR-AUC are undefined."
+      ],
+      "threshold_selection_status": "NOT_SCIENTIFICALLY_EVALUABLE"
+    },
+    "xgboost": {
+      "evaluation_status": "INSUFFICIENT_CLASS_COVERAGE",
+      "has_both_classes": false,
+      "threshold": 0.5,
+      "accuracy": 1.0,
+      "precision": null,
+      "recall": null,
+      "f1_score": null,
+      "roc_auc": null,
+      "pr_auc": null,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": null,
+      "confusion_matrix": {
+        "true_negatives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 0
+      },
+      "roc_curve": {
+        "false_positive_rate": [],
+        "true_positive_rate": [],
+        "thresholds": []
+      },
+      "pr_curve": {
+        "precision": [],
+        "recall": [],
+        "thresholds": []
+      },
+      "warnings": [
+        "Accuracy is calculated, but evaluation split does not contain both benign and malware classes. Accuracy must NOT be interpreted as malware detection performance.",
+        "Evaluation split contains no malware (positive) samples. Recall, Precision, F1, FNR, ROC-AUC, and PR-AUC are undefined."
+      ],
+      "threshold_selection_status": "NOT_SCIENTIFICALLY_EVALUABLE"
+    }
+  },
+  "final_test_evaluation": {
+    "evaluation_status": "INSUFFICIENT_CLASS_COVERAGE",
+    "has_both_classes": false,
+    "threshold": 0.5,
+    "accuracy": 1.0,
+    "precision": null,
+    "recall": null,
+    "f1_score": null,
+    "roc_auc": null,
+    "pr_auc": null,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": null,
+    "confusion_matrix": {
+      "true_negatives": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 0
+    },
+    "roc_curve": {
+      "false_positive_rate": [],
+      "true_positive_rate": [],
+      "thresholds": []
+    },
+    "pr_curve": {
+      "precision": [],
+      "recall": [],
+      "thresholds": []
+    },
+    "warnings": [
+      "Accuracy is calculated, but evaluation split does not contain both benign and malware classes. Accuracy must NOT be interpreted as malware detection performance.",
+      "Evaluation split contains no malware (positive) samples. Recall, Precision, F1, FNR, ROC-AUC, and PR-AUC are undefined.",
+      "Final scientific benchmark unavailable: test split lacks binary class coverage."
+    ],
+    "inference_latency": {
+      "total_inference_time_ms": 19.0875,
+      "average_time_per_sample_ms": 19.0875
+    },
+    "test_evaluation_mode": "ENGINEERING_SMOKE_EVALUATION"
+  }
+}

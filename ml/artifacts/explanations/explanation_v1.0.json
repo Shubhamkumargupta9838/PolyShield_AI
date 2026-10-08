@@ -1,0 +1,244 @@
+{
+  "scan_id": "cff66bc8-b651-4ab9-838a-327fadf42b97",
+  "sample_sha256": "22b3cd08daf7fead5bec58bd0b1dfe2874d25fac2aad0f2dd8675b39407333ef",
+  "explanation_version": "explanation_v1.0",
+  "static_explanation": {
+    "model_version": "static_baseline_v2.0",
+    "explainer_type": "SHAP_TreeExplainer",
+    "base_value": 0.4867,
+    "model_output": 0.4867,
+    "sum_of_attributions": 0.0,
+    "attributions": [
+      {
+        "feature": "file_size",
+        "value": 1024.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 1
+      },
+      {
+        "feature": "number_of_sections",
+        "value": 1.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 2
+      },
+      {
+        "feature": "dll_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 3
+      },
+      {
+        "feature": "api_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 4
+      },
+      {
+        "feature": "max_section_entropy",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 5
+      },
+      {
+        "feature": "min_section_entropy",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 6
+      },
+      {
+        "feature": "mean_section_entropy",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 7
+      },
+      {
+        "feature": "high_entropy_section_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 8
+      },
+      {
+        "feature": "executable_section_count",
+        "value": 1.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 9
+      },
+      {
+        "feature": "writable_section_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 10
+      },
+      {
+        "feature": "rwx_section_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 11
+      },
+      {
+        "feature": "unusual_section_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 12
+      },
+      {
+        "feature": "resource_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 13
+      },
+      {
+        "feature": "suspicious_api_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 14
+      },
+      {
+        "feature": "static_indicator_count",
+        "value": 1.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 15
+      },
+      {
+        "feature": "is_dll",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 16
+      },
+      {
+        "feature": "is_driver",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 17
+      }
+    ],
+    "top_k_attributions": [
+      {
+        "feature": "file_size",
+        "value": 1024.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 1
+      },
+      {
+        "feature": "number_of_sections",
+        "value": 1.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 2
+      },
+      {
+        "feature": "dll_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 3
+      },
+      {
+        "feature": "api_count",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 4
+      },
+      {
+        "feature": "max_section_entropy",
+        "value": 0.0,
+        "contribution": 0.0,
+        "direction": "NEUTRAL",
+        "rank": 5
+      }
+    ]
+  },
+  "dynamic_explanation": {
+    "model_version": "dynamic_lstm_v1.0",
+    "explainer_type": "Captum_LayerIntegratedGradients",
+    "sequence_length": 0,
+    "unknown_event_rate": 0.0,
+    "model_output": 0.5034,
+    "attributions": [],
+    "top_k_attributions": [],
+    "temporal_timeline": []
+  },
+  "ensemble_decomposition": {
+    "ensemble_mode": "BOTH_MODALITIES",
+    "static_weight": 0.5,
+    "static_probability": 0.4867,
+    "static_component_contribution": 0.2434,
+    "dynamic_weight": 0.5,
+    "dynamic_probability": 0.5034,
+    "dynamic_component_contribution": 0.2517,
+    "ensemble_probability": 0.495,
+    "explanation_summary": "Multimodal Ensemble decision (P=0.4950): Static PE model contributed 0.2434 (weight=0.50, P=0.4867) and Dynamic Sandbox LSTM model contributed 0.2517 (weight=0.50, P=0.5034)."
+  },
+  "observed_evidence": [
+    {
+      "metric_name": "max_section_entropy",
+      "metric_value": 0.0,
+      "category": "static_structural",
+      "description": "Maximum Shannon entropy observed across PE sections (0.0 - 8.0)"
+    },
+    {
+      "metric_name": "rwx_section_count",
+      "metric_value": 0.0,
+      "category": "static_structural",
+      "description": "Count of PE sections configured as simultaneously readable, writable, and executable"
+    },
+    {
+      "metric_name": "suspicious_api_count",
+      "metric_value": 0.0,
+      "category": "static_structural",
+      "description": "Count of security-sensitive Win32 APIs imported"
+    },
+    {
+      "metric_name": "file_size",
+      "metric_value": 1024.0,
+      "category": "static_structural",
+      "description": "PE binary file size in bytes"
+    },
+    {
+      "metric_name": "process_count",
+      "metric_value": 0,
+      "category": "dynamic_telemetry",
+      "description": "Count of processes created during sandbox execution trace"
+    },
+    {
+      "metric_name": "registry_write_count",
+      "metric_value": 0,
+      "category": "dynamic_telemetry",
+      "description": "Count of registry key write/delete operations observed"
+    },
+    {
+      "metric_name": "blocked_network_attempt_count",
+      "metric_value": 0,
+      "category": "dynamic_telemetry",
+      "description": "Count of outbound network connection attempts blocked by isolation policy"
+    }
+  ],
+  "risk_level": "MEDIUM",
+  "decision_threshold": 0.5,
+  "decision_summary": "Prediction classification 'benign' with P=0.4950 assigned risk level 'MEDIUM'. Multimodal Ensemble decision (P=0.4950): Static PE model contributed 0.2434 (weight=0.50, P=0.4867) and Dynamic Sandbox LSTM model contributed 0.2517 (weight=0.50, P=0.5034).",
+  "limitations": {
+    "causal_claim_policy": "Model attributions quantify marginal impact on model outputs and do NOT constitute causal proof of malware intent.",
+    "observed_vs_attribution_distinction": "Observed evidence represents measured PE features/telemetry. Attributions quantify model weights, not raw facts.",
+    "synthetic_dataset_disclosure": "Attributions are computed from baseline models trained on synthetic engineering fixtures and reflect software validation only."
+  },
+  "created_at": "2026-09-15T17:25:00.592978Z"
+}

@@ -1,0 +1,37 @@
+sequenceDiagram
+    autonumber
+    actor Analyst as Security Analyst
+    participant UI as React Dashboard
+    participant API as FastAPI Backend
+    participant Mongo as MongoDB
+    participant Redis as Redis / Celery
+    participant Static as Static Analyzer
+    participant Dynamic as Dynamic Normalizer
+    participant ML as Multimodal Ensemble
+    participant XAI as SHAP / Captum XAI
+
+    Analyst->>UI: Upload PE Binary
+    UI->>API: POST /api/v1/scans (PE Bytes)
+    API->>API: Validate PE Header & Size Bounds
+    API->>API: Compute SHA-256 Checksum
+    API->>Mongo: Insert Scan Record (Status: QUEUED)
+    API->>Redis: Enqueue Celery Task
+    API-->>UI: Return Scan ID & Metadata
+
+    Redis->>Static: Trigger Async Analysis
+    Static->>Static: Parse Headers, Sections, Imports, Entropy
+    Static-->>ML: Extract 17 Static Features (static-v1)
+
+    Redis->>Dynamic: Process Telemetry Sequence
+    Dynamic->>Dynamic: Normalize & Encode Events (seq_len <= 256)
+    Dynamic-->>ML: Extract 14 Dynamic Features & Index Sequence
+
+    ML->>ML: Evaluate Static RF (P_static) & Dynamic LSTM (P_dynamic)
+    ML->>ML: Compute Ensemble P = 0.5*P_static + 0.5*P_dynamic
+    ML->>XAI: Compute SHAP & Captum Attributions
+    XAI-->>Mongo: Store Analysis Report & XAI Metadata (Status: COMPLETED)
+
+    Analyst->>UI: View Scan Dashboard
+    UI->>API: GET /api/v1/reports/{scan_id}
+    API->>Mongo: Retrieve Authoritative Report
+    API-->>UI: Render Probabilities, Risk Band & XAI Visuals

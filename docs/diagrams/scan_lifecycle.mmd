@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> QUEUED : Sample Uploaded
+    QUEUED --> STATIC_ANALYSIS : Worker Picks Up Task
+    STATIC_ANALYSIS --> DYNAMIC_ANALYSIS : Static Features Extracted
+    DYNAMIC_ANALYSIS --> FEATURE_EXTRACTION : Dynamic Telemetry Processed
+    FEATURE_EXTRACTION --> ML_INFERENCE : Features & Sequences Encoded
+    ML_INFERENCE --> REPORT_GENERATION : Ensemble & XAI Computed
+    REPORT_GENERATION --> COMPLETED : Report Saved to MongoDB
+
+    QUEUED --> FAILED : Execution Exception / Timeout
+    STATIC_ANALYSIS --> FAILED : Parse / Format Error
+    DYNAMIC_ANALYSIS --> FAILED : Sandbox / Normalization Error
+    FEATURE_EXTRACTION --> FAILED : Feature Extraction Error
+    ML_INFERENCE --> FAILED : Model Inference Error
+    REPORT_GENERATION --> FAILED : Database Persist Error

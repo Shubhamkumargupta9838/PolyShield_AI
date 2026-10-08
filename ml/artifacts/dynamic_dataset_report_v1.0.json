@@ -1,0 +1,38 @@
+{
+  "dataset_version": "dynamic-v1.0",
+  "dataset_provenance_status": "SYNTHETIC_FIXTURE",
+  "scientific_benchmark_ready": false,
+  "sample_count": 10,
+  "benign_count": 5,
+  "malware_count": 5,
+  "duplicate_count": 0,
+  "duplicate_rate": 0.0,
+  "sequence_length_statistics": {
+    "min": 2,
+    "max": 2,
+    "mean": 2.0,
+    "median": 2.0,
+    "p95": 2.0,
+    "max_sequence_length_setting": 256
+  },
+  "truncation_statistics": {
+    "truncated_sequence_count": 0,
+    "truncation_rate": 0.0
+  },
+  "unknown_event_statistics": {
+    "total_unknown_events": 0,
+    "total_events": 20,
+    "unknown_event_rate": 0.0
+  },
+  "metadata_excluded_from_x": [
+    "sample_sha256",
+    "filename",
+    "scan_id",
+    "family",
+    "group_id",
+    "source",
+    "dataset_version"
+  ],
+  "vocab_version": "dynamic-v1.0",
+  "vocab_size": 29
+}
